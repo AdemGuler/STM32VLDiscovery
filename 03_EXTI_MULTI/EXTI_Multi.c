@@ -72,7 +72,7 @@ void EXTI2_IRQHandler(){
 
 void EXTI9_5_IRQHandler(){
 	if(EXTI_GetITStatus(EXTI_Line6)!= RESET){
-		GPIO_SetBits(GPIOB,GPIO_Pin_0 |GPIO_Pin_1 |GPIO_Pin_2);
+		GPIO_ResetBits(GPIOB,GPIO_Pin_0 |GPIO_Pin_1 |GPIO_Pin_2);
 		delay(3600000);
 	
 	}
