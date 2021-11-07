@@ -66,17 +66,17 @@ int main(){
 		adc_value = read_adc();
 		map_value = map(adc_value, 4095, 0, 180, 0);
 		
-			if(map_value>=0 && map_value<60){
+		if(map_value>=0 && map_value<60){
 			GPIO_SetBits(GPIOB,GPIO_Pin_0);
 			GPIO_ResetBits(GPIOB,GPIO_Pin_0 | GPIO_Pin_1);
 		
 		}
-		if(map_value>=60 && map_value<120){
+		else if(map_value>=60 && map_value<120){
 			GPIO_SetBits(GPIOB,GPIO_Pin_0 |GPIO_Pin_1);
 			GPIO_ResetBits(GPIOB,GPIO_Pin_2);
 		
 		}
-			if(map_value>=120 && map_value<180){
+		else if(map_value>=120 && map_value<180){
 			GPIO_SetBits(GPIOB,GPIO_Pin_0 |GPIO_Pin_1 |GPIO_Pin_2);
 		}
 		
